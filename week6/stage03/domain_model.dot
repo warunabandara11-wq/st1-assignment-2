@@ -1,0 +1,11 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", margin=0.1, nodesep=0.6, ranksep=0.8];
+  node [shape=record, fontname="Arial", fontsize=10];
+  Patient [label="{Patient|patient_id: str\lname: str\l|__init__()\l}"];
+  Practitioner [label="{Practitioner|practitioner_id: str\lname: str\lspecialty: str\l|__init__()\l}"];
+  Appointment [label="{Appointment|appointment_id: str\lpatient: Patient\lpractitioner: Practitioner\lappointment_time: str\lstatus: AppointmentStatus\l|__init__()\l}"];
+  Status [label="{AppointmentStatus|SCHEDULED\lCANCELLED\l}"];
+  Patient -> Appointment [dir=none, label="1         0..*", fontsize=9];
+  Practitioner -> Appointment [dir=none, label="1         0..*", fontsize=9];
+  Appointment -> Status [style=dashed, arrowhead=vee, label="uses", fontsize=9];
+}

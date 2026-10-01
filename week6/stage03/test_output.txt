@@ -1,0 +1,7 @@
+Patient('P001', 'Alice Smith')
+Practitioner('PR001', 'Dr John Doe', 'GP')
+Appointment('A001', patient='P001', practitioner='PR001', time='2026-09-18 10:00', status='SCHEDULED')
+Consistency check: Appointment references one Patient and one Practitioner.
+Full cancellation/validation behaviour is intentionally deferred to Stage 4.
+
+Process exit code: 0

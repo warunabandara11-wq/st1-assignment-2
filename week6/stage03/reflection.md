@@ -1,0 +1,5 @@
+# Stage 3 Reflection
+
+The hardest modelling decision was deciding which nouns were real domain concepts and which were only attributes, states or technical ideas. Patient, Practitioner and Appointment have their own identity, state and responsibilities, so they are clear classes. Name is only an attribute in this small system, while Cancellation is better represented as behaviour on Appointment. Status is useful, but it does not need a full entity class, so I represented it as a small enum/value.
+
+The AI review tended to over-design the model by proposing manager, controller, notification and scheduling classes. Some of those could become useful in a larger application, but they were not required by the current domain-model stage and several had no supporting client evidence. The final choices were supported by the requirements for patient records, practitioner information, appointment booking, status, cancellation and history. The multiplicities also follow the domain: one appointment belongs to exactly one patient and one practitioner, while either person can be linked to many appointments over time.
