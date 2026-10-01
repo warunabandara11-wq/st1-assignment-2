@@ -1,0 +1,16 @@
+TEST 1 normal appointment
+{'patient': 'Test Patient', 'practitioner': 'Dr Test', 'time': '2026-09-04 09:00'}
+
+TEST 2 blank patient
+ValueError: Patient name cannot be empty
+
+TEST 3 duplicate practitioner/time (known Stage 1 limitation)
+{'patient': 'Patient A', 'practitioner': 'Dr Test', 'time': '2026-09-04 10:00'}
+{'patient': 'Patient B', 'practitioner': 'Dr Test', 'time': '2026-09-04 10:00'}
+duplicate accepted in v0.1 -> limitation confirmed
+
+TEST 4 None appointment time (known Stage 1 limitation)
+{'patient': 'Patient C', 'practitioner': 'Dr Other', 'time': None}
+None time accepted in v0.1 -> limitation confirmed
+
+Process exit code: 0

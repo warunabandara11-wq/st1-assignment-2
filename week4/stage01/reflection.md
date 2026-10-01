@@ -1,0 +1,5 @@
+# Stage 1 Reflection
+
+Before using AI, I built a small Python prototype that stored appointments in a list of dictionaries and displayed them using functions. This helped me understand the basic data that an appointment needs and also showed how quickly a small script can become limited. The AI review was most useful for pointing out missing validation and asking what should happen with duplicate bookings and unusual input. I did not treat every suggestion as a requirement because the client brief does not define every validation rule or technical solution.
+
+I verified the suggestions by running normal and unusual inputs and comparing them with the SmartCare case study. A blank patient name is rejected in my final Stage 1 version as one controlled improvement. I left duplicate-booking prevention and detailed time validation for later stages because they need clearer requirements and design decisions. The engineering work that remained for me was deciding what was actually supported by client evidence, keeping the prototype in scope, running the tests, and making sure I could explain the final code instead of simply accepting generated code.
