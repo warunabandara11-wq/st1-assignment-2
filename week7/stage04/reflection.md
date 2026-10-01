@@ -1,0 +1,5 @@
+# Stage 4 Reflection
+
+The most important AI-generated idea I kept was protecting the appointment status and allowing cancellation only through a method that checks the current state. I rejected suggestions that would have placed persistence or notification work inside the Appointment class because those responsibilities are not part of the approved domain model and would tightly couple the class to unrelated infrastructure.
+
+The approved design constrained the AI by defining the three core domain classes, their attributes and their relationships before coding started. That meant the code generator could not legitimately add manager classes, database calls, a UI or new client features just because they seemed useful. Patient and Practitioner were implemented with basic validation and read-only properties, while Appointment owns the legal SCHEDULED-to-CANCELLED transition. The tests then checked valid construction, invalid input, cancellation and an illegal repeated transition. This made the final implementation easier to explain and kept the code aligned with the model instead of allowing the generated code to redefine the design.

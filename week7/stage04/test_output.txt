@@ -1,0 +1,23 @@
+TEST 1 create valid objects
+Patient('P001', 'Alice Smith')
+Practitioner('PR001', 'Dr John Doe', 'GP')
+Appointment('A001', patient='P001', practitioner='PR001', time='2026-09-25 10:00', status='SCHEDULED')
+
+TEST 2 reject invalid patient name
+ValueError: Patient name cannot be empty
+
+TEST 3 reject invalid practitioner specialty
+ValueError: Specialty cannot be empty
+
+TEST 4 reject wrong object type in Appointment
+TypeError: patient must be a Patient
+
+TEST 5 cancel scheduled appointment
+Appointment('A001', patient='P001', practitioner='PR001', time='2026-09-25 10:00', status='CANCELLED')
+
+TEST 6 reject illegal repeated cancellation
+InvalidStatusTransitionError: Only a scheduled appointment can be cancelled
+
+All Stage 4 manual behaviour checks completed.
+
+Process exit code: 0
