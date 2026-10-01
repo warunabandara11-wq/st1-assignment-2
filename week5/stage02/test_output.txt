@@ -1,0 +1,26 @@
+Register patient/practitioner
+{'patient_id': 'P001', 'name': 'Alice Smith'}
+{'practitioner_id': 'PR001', 'name': 'Dr John Doe', 'specialty': 'GP'}
+
+Search patient
+{'patient_id': 'P001', 'name': 'Alice Smith'}
+
+Book valid appointment
+{'appointment_id': 'A001', 'patient_id': 'P001', 'practitioner_id': 'PR001', 'appointment_time': '2026-09-11 10:00', 'status': 'SCHEDULED'}
+
+Reject duplicate practitioner/time
+ValueError: Practitioner already has a scheduled appointment at this time
+
+Cancel and retain appointment
+{'appointment_id': 'A001', 'patient_id': 'P001', 'practitioner_id': 'PR001', 'appointment_time': '2026-09-11 10:00', 'status': 'CANCELLED'}
+[{'appointment_id': 'A001', 'patient_id': 'P001', 'practitioner_id': 'PR001', 'appointment_time': '2026-09-11 10:00', 'status': 'CANCELLED'}]
+
+Reject repeated cancellation
+ValueError: Only a scheduled appointment can be cancelled
+
+Operational summary
+{'total': 1, 'scheduled': 0, 'cancelled': 1}
+
+All Stage 2 prototype checks completed.
+
+Process exit code: 0
